@@ -1,10 +1,12 @@
 const express = require('express')
-    // const alpinejs = require('alpinejs')
-const port = 3000
+const port = 5000
 const app = express()
+const path = require('path')
+
+console.log(__dirname)
 
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    res.sendFile(path.join(__dirname, '/public', 'index.html'));
 })
 
 app.listen(port, () => {
